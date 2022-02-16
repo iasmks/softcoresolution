@@ -7,8 +7,6 @@
 body{
 	margin: 0%;
 	padding: 0%;
-	display: grid;
-	width: 1100px%;
 	height: 100vh;
 }
 html {
@@ -68,7 +66,21 @@ p {
 .cta:hover {
 	color: white;
 	background-color: crimson;
-	font-style: italic;
+	font-style: bold;
+}
+.text-area {
+	position: absolute;
+	bottom: 50px;
+}
+@media screen and (max-width:650px) {
+	.container {
+		min-height: 60vh;
+	}
+
+	.text-area {
+		position: absolute;
+		bottom: 50px;
+	}
 }
 .brand h1 {
 	font-size: 3rem;
@@ -106,10 +118,10 @@ p {
 	list-style: none;
 	position: absolute;
 	background-color: rgb(31, 30, 30);
-	width: 100vw;
+	width: 100%;
 	height: 100vh;
-	left: 100%;
-	top: 0;
+/* left: 100%; */
+	/* top: 0; */
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -117,6 +129,16 @@ p {
 	z-index: 1;
 	overflow-x: hidden;
 	transition: 0.5s ease left;
+}
+
+@media only screen and (max-width: 500px) {
+	#header .nav-list ul {
+		left: 0%;
+	/* margin-right: 100px; */
+	}
+	#header .hamburger {
+		margin-right: -25px;
+	}
 }
 #header .nav-list ul.active {
 	left: 0%;
@@ -146,11 +168,11 @@ p {
 #header .nav-list ul li:hover a::after {
 	transform: translate(-50%, -50%) scale(1);
 	letter-spacing: initial;
-	font-style: italic;
+	font-style: bold;
 }
 #header .nav-list ul li:hover a {
 	color: crimson;
-	font-style: italic;
+	font-style: bold;
 }
 #header .hamburger {
 	height: 60px;
@@ -165,7 +187,7 @@ p {
 	z-index: 100;
 	cursor: pointer;
 	transform: scale(0.8);
-	margin-right: 20px;
+	/* margin-right: 20px; */
 }
 #header .hamburger:after {
 	position: absolute;
@@ -594,7 +616,8 @@ p {
 
 	/* main start */
 	#main h1 {
-		font-size: 7rem;
+		font-size: 5rem;
+		padding: 5px;
 	}
 	/* main closed */
 
@@ -685,7 +708,7 @@ p {
 	}
 	/*contact closed */
 }
-/* mobile device support start */ 
+/* mobile device support start */
 
 /* computer device support start */
 @media only screen and (min-width: 1200px) {
@@ -719,33 +742,36 @@ p {
 /* computer device support closed */
 
 .container1{
-	background-color: #6a7b96;
-	margin: 5px;
+	/* background-color: #6a7b96; */
+	margin: 15px;
 }
 .progress-title{
-	width: 1200px;
+	/* width: 1200px; */
 	height: auto;
-	
+
 }
 .progress-title h3{
 	font-size: 18px;
 	font-weight: 700;
-	color: #fff;
+	color: #000;
 	margin: 12px;
 }
 .progress{
 	height: 20px;
-	background: #168b34;
+	background: gray;
 	border-radius: 20px;
-	border: 1px solid #000;
+	/* border: 1px solid #000; */
 	box-shadow: 0 2px 2px #4f4c4c;
 	margin-bottom: 40px;
 	overflow: visible;
 	position: relative;
 }
-.progress .progress-bar{
-	border-radius: 20px;
-	border: 1px solid #000;
+.progress-bar{
+	height: 100%;
+	border-top-left-radius: 20px;
+	border-top-right-radius: 0px;
+	border-bottom-left-radius: 20px;
+	border-bottom-right-radius: 0px;
 	animation: animate-positive 2s;
 }
 .progress .progress-value{
@@ -761,15 +787,23 @@ p {
 	box-shadow: 0 2px 2px #4f4c4c;
 	position: absolute;
 	bottom: -25px;
-	right: 60px;
+	right: 10px;
+	text-align: center;
 }
+
 .skill{
 	text-align: center;
 	margin-bottom: 20px;
-	font-size: xx-large;
-	font-weight: 700;
-	font-style: italic;
+	font-size: 4rem;
+    font-weight: 300;
 }
+.skill span {
+	color: crimson;
+}
+.nav-list {
+	margin-right: 15px;
+}
+
 @-webkit-keyframes animate-positive{
 	0%{
 		width: 0%;
